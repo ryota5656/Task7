@@ -1,0 +1,25 @@
+<body>
+  
+
+<header>
+<%= render "shared/partial" %>
+</header>
+<% @reservations.zip(@rooms) do |f,room|  %>
+
+ <% if room.image.attached? %>
+      <%= image_tag room.image %>
+  <% end %>
+  <tr>
+    <td><%= f.room_id %></td>
+    <td><%= f.user_id %></td>
+    <td><%= f.start_data %></td>
+    <td><%= f.end_data %></td>
+    <td><%= f.people %></td>
+  </tr>
+  <br>
+<% end %>
+
+
+<p><%= link_to "新規登録", :new_room %></p>
+<p><%= link_to "全てのルーム",  rooms_path %></p>
+</body>

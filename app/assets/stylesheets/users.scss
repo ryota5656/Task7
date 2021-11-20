@@ -1,0 +1,95 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// right_side
+.user_nav{
+  background-color:#fff;
+  border-right: 2px solid #e2e2e2;
+  padding:10px;
+  padding-top:50px;
+  
+}
+
+
+
+// left_side
+.header-logo{
+  margin-left:20px;
+}
+.header-profile-name{
+  color:white;
+  width:150px;
+  margin-left: auto;
+}
+.header-profile_image img{ 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.dropdown{
+  margin-top: -20px;
+  width:130px;
+}
+.dropdown-menu.show{
+  margin:-70px;
+}
+
+
+.header{
+  display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+
+
+
+body{
+  margin:0;
+    background-color:#F6F8F9;
+    font-size:16px;
+}
+header{
+  
+  width:100%;
+  height:70px;
+  background-color:black;
+}
+.row{
+  display:flex;
+}
+
+.profile_background{
+  height:100vh;
+  background-color: #F6F8F9;
+}
+
+.profile_box{
+  height: 600px;
+  max-width:800px;
+  margin: 100px auto;
+  background-color:#Fff;    
+  border: 1px solid #eaedef;
+}
+.profile_element{
+  padding:30px;
+  margin:0px 20px;
+  border-bottom:1px solid #eaedef;
+}
+.profile_element span{
+  font-weight:bold;
+}
+
+.profile_image{
+  max-width:120px;
+  margin: 0px auto;
+}
+.profile_image img {
+border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      
+}
