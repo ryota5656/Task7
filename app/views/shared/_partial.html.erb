@@ -13,18 +13,20 @@
   <link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
   <div class="header">
     <!--ロゴの表示  -->
+    <%= link_to  rooms_path do%>
     <img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" class="header-logo">
+    <%end%>
     
     <!--検索-->
     <%= form_tag(search_path, :method => "get") do %>
       <i class="fas fa-map-marker-alt" style="color: white;"></i>
-      <%= text_field_tag :search2  ,'', class: 'search-field' %> 
+      <%= text_field_tag :search_area  ,'', class: 'search-field' %> 
       <% submit_tag "Search" ,:address => nil ,class: "button is-info"%> 
     <% end %> 
     
     <%= form_tag(search_path, :method => "get") do %>
       <i class="fas fa-search" style="color: white;"></i>
-      <%= text_field_tag :search  ,'', class: 'search-field' %> 
+      <%= text_field_tag :search_key  ,'', class: 'search-field' %> 
       <% submit_tag "Search" ,:name => nil ,class: "button is-info"%> 
     <% end %> 
     
@@ -37,17 +39,22 @@
     
     <!--ドロップダウンメニューとアイコン表示-->
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
        <div class="header-profile_image">
           <!--アイコン表示-->
-          <%= image_tag current_user.avatar %>
+          <% if current_user.avatar.attached? %>
+          <%=  image_tag current_user.avatar %>
+          <% else  %>
+          <%= image_tag "default.png"%>
+          <%end%>
        </div>
        <span class="caret"></span></a>
         <!--ドロップダウンメニュー表示-->
+      <div class="dropdown-position">
       <ul class="dropdown-menu">
         <li><a href="/rooms/new">ルーム登録</a></li>
-        <li><a href="/reservations/reservation">登録済みルーム一覧</a></li>
-        <li><a href="/rooms/register">予約済みルーム一覧</a></li>
+        <li><a href="/reservations/reservation">予約済みルーム一覧</a></li>
+        <li><a href="/rooms/register">登録済みルーム一覧</a></li>
         <li><%= link_to "設定", user_path(id: current_user.id) %></li>
         <li>
         <% if user_signed_in? %>
@@ -58,6 +65,7 @@
         <% end %>
         </li>
       </ul>
+    </div>
     </li>
     
   </div>

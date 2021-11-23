@@ -1,25 +1,39 @@
 class Room < ApplicationRecord
+  belongs_to :user, optional: true
+  
+  has_many :reservations
+  
+  has_one_attached :image
+  with_options presence: true do
+    validates :image, blob: { content_type: ['image/jpeg', 'image/png'] }
+  end
+  
   
    validates :name, presence: true
    validates :introduction, presence: true
    validates :price, presence: true
+   validates :address, presence: true
    validates :user_id, presence: true
-   validates :image, presence: true
+   
+  def self.search_area(search)
+    if search
+      where(['address LIKE ?', "%#{search}%"]) 
+    else
+      Room.all
+    end
+  end
   
-  
-  def self.search(search) #self.はUser.を意味する
-     if search
-       where(['name LIKE ?', "%#{search}%"]) #検索とuseanameの部分一致を表示。
-     else
-       all #全て表示させる
-     end
+  def self.search_key(search)
+    if search
+      where(['name LIKE ? OR address LIKE ?', "%#{search}%", "%#{search}%"]) 
+    else
+      Room.all
+    end
   end
   
   
-  belongs_to :user, optional: true
+
   
-  has_many :reservations
-  has_many :users, through: :reservations
   
-  has_one_attached :image
+  
 end

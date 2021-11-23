@@ -1,3 +1,4 @@
+
 <body>
   
 <header>
@@ -14,15 +15,13 @@
         <th>ルーム名</th>
         <th>ルーム紹介</th>
         <th>合計料金</th>
-        <th>開始日</th>
-        <th>終了日</th>
-        <th>予約確定日時</th>
+        <th>作成日時</th>
     </tr>
   </thead>
   
   <div>
     
-        <% @rooms.zip(@reservations) do |room,reservation| %>
+        <% @rooms.each do |room| %>
         <tr>
             <td>
             <% if room.image.attached? %>
@@ -31,8 +30,6 @@
               <td width="150"><%= room.name %></td>
               <td width="150"><%= room.introduction %></td>
               <td width="150"><%= room.price %></td>
-              <td width="150"><%= reservation&.start_data %></td>
-              <td width="150"><%= reservation&.end_data %></td>
               <td width="150"><%= room.created_at %></td>
             </tr>
         <% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    devise_scope :user do
         get '/users/sign_out' => 'devise/sessions#destroy'
     end
+    
 
     
     # ログイン、アカウント編集後、任意のページに推移させるための記述

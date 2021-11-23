@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def after_sign_in_path_for(resource)
-    edit_user_registration_path # ログイン後に遷移するpathを設定
+    user_path(resource) # ログイン後に遷移するpathを設定
   end
 
   def after_sign_out_path_for(resource)

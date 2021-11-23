@@ -6,15 +6,22 @@ class RoomsController < ApplicationController
   end
   
   def search
-    @rooms = Room.paginate(page: params[:page], per_page: 5).search(params[:search])
-    @rooms_count = Room.paginate(page: params[:page], per_page: 5).search(params[:search]).count
+    if params[:search_area].present?
+      @rooms= Room.paginate(page: params[:page], per_page: 100).search_area(params[:search_area])
+    else 
+      @rooms= Room.paginate(page: params[:page], per_page: 100).search_key(params[:search_key])
+    end
+    
+    if params[:search_area].present?
+      @rooms_count = Room.paginate(page: params[:page], per_page: 5).search_area(params[:search_area]).count
+    else
+      @rooms_count = Room.paginate(page: params[:page], per_page: 5).search_key(params[:search_key]).count
+    end
   end
   
   def register
     @user = current_user.id
-    
-    @reservations = Reservation.where(user_id: @user)
-    @rooms = Room.where(id: @reservations.room_id)
+    @rooms = Room.where(user_id: @user)
   end
   
   
@@ -34,10 +41,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  def show
-    @room = Room.find(params[:id]) 
-    @reservation = Reservation.new
-  end
 
   def edit
     @room = Room.find(params[:id]) 

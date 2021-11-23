@@ -7,12 +7,13 @@
       
       <div class="col-md-8">
         <% if @room.image.attached? %>
-            <%= image_tag @room.image %>
+            <%= image_tag @room.image,class: "reservation_image" %>
         <% end %>
       </div>
     
     <div class="col-md-4">
       <div class="room_show_nav">
+        <%= render "shared/error", obj: @reservation %>　<!--ここを追加する-->
         <h5 class="reservation_price">¥<%= @room.price %> / 日</h5>
         <%= form_with model: @reservation ,url: room_reservations_path(room_id: @room.id) , local:true do |f| %>
           <%= f.hidden_field :user_id, value: current_user.id %>
@@ -34,6 +35,3 @@
     </div>
   </div>
 </div>
-
-<p><%= link_to "新規登録", :new_room %></p>
-<p><%= link_to "全てのルーム",  rooms_path %></p>

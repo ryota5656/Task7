@@ -10,7 +10,7 @@
   <div class="row">
     <% @rooms.each do |room| %>
     <div class="col-sm-6 col-lg-4 col-xl-3">
-      <%= link_to room, class: "link_room" do  %>
+      <%= link_to room_reservations_path(room) , class: "link_room" do  %>
       <div class="room-frame-inner">
         
         <div class="room-image-out">
