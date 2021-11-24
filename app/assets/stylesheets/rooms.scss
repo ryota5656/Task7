@@ -1,0 +1,260 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// index
+.top_main{
+  background-image:url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg");
+  background-size: cover;
+  height:650px;
+  width: 100%;
+}
+.container{
+  max-width: 1140px;
+}
+.search{
+  max-width:50%;
+}
+.search_form{
+  height:650px;
+  align-items:center;
+  display: flex;
+  
+}
+.search_area{
+  background:#fff;
+  padding:24px;
+  border-radius: 5px;
+}
+.search_area_text1{
+  font-size: 28px;
+  line-height: 33px;
+  letter-spacing: 1px;
+}
+.search_area_text2{
+  margin:0px;
+}
+.search_area_btn{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.bottom_side{
+  margin-left:80px;
+  margin-right:80px;
+}
+.bottom{
+  margin:48px;
+}
+.bottom_title_text{
+  font-size: 24px;
+  margin: 35px 0;
+  font-weight: bold;
+}
+.bottom_search{
+  display:flex;
+  justify-content: space-evenly;
+}
+.bottom_search_1{
+  position: relative;
+   max-width:25%;
+   margin:5px;
+}
+.search_button{
+  max-width: 100%;
+  width: 250px;
+  height:360px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 0px;
+}
+.button_tokyo{
+  background: url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.button_osaka{
+  background: url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.button_kyoto{
+  background: url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.button_sapporo{
+  background: url("https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.bottom_search_1 span{
+  position: absolute;
+  color:#fff;
+  text-align: center;
+  font-size:40px;
+  font-weight:bold;
+  right:0;
+  left:0;
+  bottom:10%;
+}
+
+
+
+
+// search
+.room {
+  width: 100%;
+  padding: 30px 60px;
+}
+.col-lg-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.room-frame-inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+
+.room-image-out {
+  position: relative;
+  width: 100%;
+  background-color: #F6F8F9;
+  height: 200px;
+}
+.room_image{
+  width: 100%;
+  height: 180px;
+  position:absolute;
+  top:20px;
+  object-fit: cover;
+}
+.room_profile {
+  width: 100%;
+  padding: 15px;
+}
+.room_profile_name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+.room_profile_address {
+  font-size: 16px;
+  font-weight: bold;
+}
+.room_profile_price {
+  text-align: right;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.link_room{
+  text-decoration: none !important;
+  color:black;
+}
+
+
+
+
+
+// show
+.room-show{
+  margin-top:50px;
+}
+.room_show_nav{
+  padding: 20px;
+    border: 1px solid #eaedef;
+}
+.reservation_image{
+  max-width: 700px;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+
+// reservation
+.reservation_price{
+  margin-bottom:20px;
+}
+.reservation_start{
+  margin:0;
+}
+.reservation_end{
+  margin:0;
+}
+.reservation_people{
+  margin:0;
+}
+
+// register
+.reservations_image{
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+}
+.reservations{
+  max-width: 100vw;
+  padding: 30px 60px;
+}
+.reservations table{
+  min-width: 800px;
+  margin:auto;
+}
+.reservations td{
+  padding:20px;
+  border-bottom:1px solid #eaedef;
+}
+.reservations table td {
+	background: #f9fafb;
+}
+.reservations table tr:nth-child(odd) td {
+	background: #fff;
+}
+.reservations thead{
+  border-bottom:1px solid #eaedef;
+  border-top:1px solid #eaedef;
+}
+.reservations thead th{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+// new
+
+.rooms_new_background{
+ 
+  background-color: #F6F8F9;
+}
+
+.room_nav{
+  background-color:#fff;
+  border-right: 2px solid #e2e2e2;
+  padding:10px;
+  padding-top:50px;
+  
+}
+
+.room_box{
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 50px auto;
+}
+
+.room_element{
+  padding:30px;
+  border-bottom:1px solid #eaedef;
+}
+.room span{
+  font-weight:bold;
+}
+.room_element th{
+  margin-right:20px;
+}
+.room_element span{
+  border-radius: 5px;
+  color:#fff;
+  background-color:#ff0000;
+  padding:2px;
+  margin:5px;
+}

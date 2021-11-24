@@ -1,0 +1,58 @@
+
+<body>
+    <header class="header">
+        <%= render "shared/partial" %>
+    </header>
+    
+    <div class="profile_background row ">
+        
+        <div class="user_nav user_nav-pc col-lg-2 d-lg-block">
+            <p>アカウント</p>
+            <p><%= link_to "アカウント編集", edit_user_registration_path %></p>
+            <p><%= link_to "プロフィールの変更",  [:edit_user] %></p>
+            <p><%= link_to "トップページ",  rooms_path %></p>
+            
+            
+        </div>
+        <div class="profile_box">
+            
+            <div class="profile_element">
+                <div class="profile_image">
+                    <% if @user.avatar.attached? %>
+                      <%= image_tag @user.avatar %>
+                      <%else%>
+                      <%= image_tag "default.png"%>
+                    <% end %>
+                </div>
+            </div>
+                <div class="profile_element">
+                    <table>
+                        <tr>
+                        <th width="150" align="left">名前</th>
+                        <td valign="top"><%= @user.name %></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="profile_element">
+                    <table>
+                        <tr>
+                        <th width="150" align="left">メールアドレス</th>
+                        <td><%= @user.email %></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="profile_element">
+                    <table>
+                        <tr>
+                        <th width="150" align="left">自己紹介</th>
+                        <td><%= @user.introduction %></td>
+                        </tr>
+                    </table>
+                
+                </div>
+                
+                
+         </div>
+    </div>
+</body>
